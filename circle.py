@@ -1,4 +1,5 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
+# coding: utf-8
 import turtle
 import sys
 from math import pi

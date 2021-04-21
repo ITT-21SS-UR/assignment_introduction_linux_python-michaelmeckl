@@ -1,14 +1,7 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
+# coding: utf-8
 import sys
 from math import sqrt
-
-# probably more efficient:
-# def calc_median(number_list: list) -> float:
-#     number_list.sort()
-#     middle = len(number_list) // 2
-#     a = number_list[middle]
-#     b = number_list[-middle-1]  # for odd lengths, a == b
-#     return (a + b) / 2
 
 
 def calc_median(number_list: list) -> float:
@@ -44,8 +37,8 @@ if __name__ == "__main__":
             with open(sys.argv[1], "r") as file:
                 content = file.read()
                 parse_input_numbers(content)
-        except IOError:
-            raise IOError("A file containing the numbers is needed!")
+        except IOError as io:
+            print(f"A file containing the numbers is needed!\n{io}")
     else:
         print("Enter any number of floating point numbers separated with"
               " a space (press 'enter' to start the program):\n")
@@ -54,5 +47,5 @@ if __name__ == "__main__":
             # from the input with 'rstrip()'
             user_input = sys.stdin.readline().rstrip()
             parse_input_numbers(user_input)
-        except IOError:
-            raise IOError("Please provide arguments separated with a space!")
+        except IOError as io:
+            print(f"Please provide arguments separated with a space!\n{io}")
